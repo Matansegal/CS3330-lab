@@ -5,6 +5,8 @@ const app = express();
 
 
 let profiles = require('./profiles');
+let articles = require('./articles');
+let reviews = require('./reviews');
 
 // middleware to use for all requests
 app.use(function(req, res, next) {
@@ -24,3 +26,5 @@ const port = process.env.PORT || 3201;
 app.listen(port, () => console.log(`Listening on port ${port}..`));
 
 app.use(profiles);
+app.use(articles);
+app.use(reviews);
